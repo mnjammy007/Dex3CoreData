@@ -18,7 +18,7 @@ struct PersistenceController {
         
         samplePokemon.id = 1
         samplePokemon.name = "bulbasur"
-        samplePokemon.types = ["grass", "poisonn"]
+        samplePokemon.types = ["grass", "poison"]
         samplePokemon.hp = 45
         samplePokemon.attack = 49
         samplePokemon.defence = 49
@@ -44,6 +44,9 @@ struct PersistenceController {
         container = NSPersistentContainer(name: "Dex3CoreData")
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
+        }
+        else{
+            container.persistentStoreDescriptions.first!.url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.mnjammy.tech.Dex3CoreDataGroup")?.appending(path: "Dex3CoreData.sqlite")
         }
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
