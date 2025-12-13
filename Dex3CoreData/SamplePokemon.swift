@@ -5,10 +5,10 @@
 //  Created by Apple on 29/10/24.
 //
 
-import Foundation
 import CoreData
+import Foundation
 
-struct SamplePokemon{
+struct SamplePokemon {
     static let samplePokemon = {
         let context = PersistenceController.preview.container.viewContext
         let fetchRequest: NSFetchRequest<Pokemon> = Pokemon.fetchRequest()
