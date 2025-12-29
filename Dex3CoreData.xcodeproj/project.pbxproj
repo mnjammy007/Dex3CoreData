@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180CD2152F02B59B00CA973E /* AppsFlyerLib-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 180CD2142F02B59B00CA973E /* AppsFlyerLib-Dynamic */; };
 		185B4F5A2CD0DE2B00DD6120 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 185B4F592CD0DE2B00DD6120 /* WidgetKit.framework */; };
 		185B4F5C2CD0DE2B00DD6120 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 185B4F5B2CD0DE2B00DD6120 /* SwiftUI.framework */; };
 		185B4F6D2CD0DE2E00DD6120 /* Dex3CoreDataWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 185B4F572CD0DE2B00DD6120 /* Dex3CoreDataWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -124,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				180CD2152F02B59B00CA973E /* AppsFlyerLib-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +222,7 @@
 			);
 			name = Dex3CoreData;
 			packageProductDependencies = (
+				180CD2142F02B59B00CA973E /* AppsFlyerLib-Dynamic */,
 			);
 			productName = Dex3CoreData;
 			productReference = 1874F9002CCF7620005309EB /* Dex3CoreData.app */;
@@ -306,6 +309,9 @@
 			);
 			mainGroup = 1874F8F72CCF7620005309EB;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				180CD2132F02B59B00CA973E /* XCRemoteSwiftPackageReference "AppsFlyerFramework-Dynamic" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 1874F9012CCF7620005309EB /* Products */;
 			projectDirPath = "";
@@ -589,7 +595,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Dex3CoreData/Preview Content\"";
-				DEVELOPMENT_TEAM = B97AZH836R;
+				DEVELOPMENT_TEAM = 9G29Z3972X;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -634,7 +640,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Dex3CoreData/Preview Content\"";
-				DEVELOPMENT_TEAM = B97AZH836R;
+				DEVELOPMENT_TEAM = 9G29Z3972X;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -812,6 +818,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		180CD2132F02B59B00CA973E /* XCRemoteSwiftPackageReference "AppsFlyerFramework-Dynamic" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppsFlyerSDK/AppsFlyerFramework-Dynamic";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.17.8;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		180CD2142F02B59B00CA973E /* AppsFlyerLib-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 180CD2132F02B59B00CA973E /* XCRemoteSwiftPackageReference "AppsFlyerFramework-Dynamic" */;
+			productName = "AppsFlyerLib-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1874F8F82CCF7620005309EB /* Project object */;
 }
