@@ -5,14 +5,15 @@
 //  Created by Apple on 29/10/24.
 //
 
-import SwiftUI
+import AppsFlyerLib
 import CoreData
+import SwiftUI
 
 struct PokemonDetail: View {
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var pokemon: Pokemon
     @State var isShowingShiny = false
-    
+
     var body: some View {
         ScrollView {
             ZStack {
@@ -20,7 +21,8 @@ struct PokemonDetail: View {
                     .resizable()
                     .scaledToFit()
                     .shadow(color: .black, radius: 6)
-                AsyncImage(url: isShowingShiny ? pokemon.shiny : pokemon.sprite) { image in
+                AsyncImage(url: isShowingShiny ? pokemon.shiny : pokemon.sprite)
+                { image in
                     image
                         .resizable()
                         .scaledToFit()
@@ -44,22 +46,32 @@ struct PokemonDetail: View {
                 Button {
                     withAnimation {
                         pokemon.favorite.toggle()
+                        AppsFlyerLib.shared().logEvent(
+                            pokemon.favorite
+                                ? "af_added_to_favorite"
+                                : "af_removed_from_favorite",
+                            withValues: [
+                                "name": pokemon.name ?? "bulbasur"
+                            ]
+                        )
                         do {
                             try viewContext.save()
                         } catch {
                             let nsError = error as NSError
-                            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                            fatalError(
+                                "Unresolved error \(nsError), \(nsError.userInfo)"
+                            )
                         }
                     }
                 } label: {
-                    Image(systemName: pokemon.favorite ? "star.fill" : "star" )
+                    Image(systemName: pokemon.favorite ? "star.fill" : "star")
                         .font(.largeTitle)
                         .foregroundColor(.yellow)
                 }
 
             }
             .padding()
-            
+
             Text("Stats")
                 .font(.title)
                 .padding(.bottom, -5)
@@ -72,8 +84,11 @@ struct PokemonDetail: View {
                 Button {
                     isShowingShiny.toggle()
                 } label: {
-                    Image(systemName: isShowingShiny ? "wand.and.stars" : "wand.and.stars.inverse")
-                        .foregroundColor(isShowingShiny ? .yellow : .accentColor)
+                    Image(
+                        systemName: isShowingShiny
+                            ? "wand.and.stars" : "wand.and.stars.inverse"
+                    )
+                    .foregroundColor(isShowingShiny ? .yellow : .accentColor)
                 }
             }
         }

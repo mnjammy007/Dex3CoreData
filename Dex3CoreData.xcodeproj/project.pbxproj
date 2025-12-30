@@ -80,6 +80,13 @@
 			);
 			target = 185B4F562CD0DE2B00DD6120 /* Dex3CoreDataWidgetExtension */;
 		};
+		18A79B3C2F03934A0020EB86 /* Exceptions for "Dex3CoreData" folder in "Dex3CoreData" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 1874F8FF2CCF7620005309EB /* Dex3CoreData */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -94,6 +101,7 @@
 		1874F9022CCF7620005309EB /* Dex3CoreData */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
+				18A79B3C2F03934A0020EB86 /* Exceptions for "Dex3CoreData" folder in "Dex3CoreData" target */,
 				185B4F742CD0DF1200DD6120 /* Exceptions for "Dex3CoreData" folder in "Dex3CoreDataWidgetExtension" target */,
 			);
 			path = Dex3CoreData;
@@ -601,8 +609,10 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Dex3CoreData/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = PokeDex;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "We use this data to understand app usage and improve your experience.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -646,8 +656,10 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Dex3CoreData/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = PokeDex;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "We use this data to understand app usage and improve your experience.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
